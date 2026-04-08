@@ -26,3 +26,9 @@ int main() {
         } else {std::cout<<" ";}
     }
 }
+
+/*
+https://www.geeksforgeeks.org/cpp/cpp-program-for-string-to-double-conversion/
+https://www.geeksforgeeks.org/cpp/bubble-sort-in-cpp/
+https://www.geeksforgeeks.org/cpp/cpp-program-for-insertion-sort/
+*/
