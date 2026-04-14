@@ -6,30 +6,69 @@
 #include<vector>
 #include <sstream> 
 
+    /**
+     * @brief Doxygen comm
+     * @param
+     * @return
+     */
+
+#define PASS std::cout<<"TO DO"<<std::endl;
+
+
+/**
+ * @brief klasa ma duzo pol, nalezy posortowac po wskaznikach
+ */
 class movie {
-    std::string num;
-    // std::string title;
-    double rating=0.0;
+
+    std::string tconst;
+    int INTtconst;
+    std::string titleType; //limited amount of types enum?
+    std::string primaryTitle;
+    std::string	originalTitle;
+    bool isAdult;
+    int	startYear;
+    std::string	endYear;
+    int	runtimeMinutes;
+    std::string	genres;
+   
+    double averageRating;
+    int	numVotes;
+
+
+    public:
 
     /**
      * @param string l porzadkowa
      * @param double rating
      */
-    public:
-    movie(std::string argi, double argd) {
-        num=argi;
-        rating=argd;
-    }
+    movie();
+    
+    // ~movie();
 
-    void print();
+    //gettery i settery
 
+    //const na koncu dla return
+    double getAverageRating () const;
+
+    //gettery i settery
+
+    /**
+     * @brief do dolaczania danych z pliku ratings
+     * @param double  rating
+     * @param int number of votes
+     */
+    void setSecondSet(double, int);
+
+    std::string print();
+    std::string printBrief();
     
 };
 
+//shift+tab--usuwanie wciecia dla kilku linii
 /**
- * Pobierz dane o filmach
- * @param int ile linii z pliku
- * @return zwraca strukture z filmami
+ * @brief overload <
+ * @param   movie filmy do porównania
+ * @return wynik < dla AverageRaing
  */
-std::vector<movie> loadData (int);
+bool operator < (const movie& a, const movie& b);
 

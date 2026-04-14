@@ -16,3 +16,6 @@ build/*
 
 DATA/*
 *.zip
+
+#test
+test.cpp

@@ -225,6 +225,30 @@ src/movie.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movie.cpp.s
 .PHONY : src/movie.cpp.s
 
+src/movieReader.o: src/movieReader.cpp.o
+.PHONY : src/movieReader.o
+
+# target to build an object file
+src/movieReader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movieReader.cpp.o
+.PHONY : src/movieReader.cpp.o
+
+src/movieReader.i: src/movieReader.cpp.i
+.PHONY : src/movieReader.i
+
+# target to preprocess a source file
+src/movieReader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movieReader.cpp.i
+.PHONY : src/movieReader.cpp.i
+
+src/movieReader.s: src/movieReader.cpp.s
+.PHONY : src/movieReader.s
+
+# target to generate assembly for a file
+src/movieReader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movieReader.cpp.s
+.PHONY : src/movieReader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -246,6 +270,9 @@ help:
 	@echo "... src/movie.o"
 	@echo "... src/movie.i"
 	@echo "... src/movie.s"
+	@echo "... src/movieReader.o"
+	@echo "... src/movieReader.i"
+	@echo "... src/movieReader.s"
 .PHONY : help
 
 

@@ -1,33 +1,26 @@
 #include "../inc/movie.h"
 
-void movie::print() {
-    std::cout<<num<<" "<<rating<<std::endl;
+movie::movie() {
+
 }
 
-std::vector<movie> loadData (int liczba) {
-    std::ifstream fileDat("../DATA/title.ratings.tsv/data.tsv");
-    std::vector<movie> filmy;
+double movie::getAverageRating () {
+    return averageRating;
+}
 
-    if (!fileDat.is_open()) {
-        std::cout << "zyl plik";
-        return filmy;
-    }
+void movie::setSecondSet(double arg1, int arg2) {
+    averageRating=arg1;
+    numVotes=arg2;
+}
 
-    std::string linia;
-    //skip 1st
-    std::getline(fileDat, linia);
+std::string print(){
 
-    // std::stringstream strStr(linia);
-    std::string arg1, arg2;
-    double arg2d;
+}
 
-    while (std::getline(fileDat, linia) && liczba) {
-        std::stringstream strStr(linia);
-        strStr>>arg1>>arg2;
-        arg2d=stod(arg2);
+std::string printBrief(){
 
-        filmy.push_back(movie(arg1, arg2d));
-        liczba--;
-    }
+}
 
+bool operator < (const movie& a, const movie& b) {
+    return a.getAverageRating() < b.getAverageRating();
 }

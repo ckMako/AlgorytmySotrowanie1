@@ -3,7 +3,7 @@
 
 
 int main() {
-    // std::vector<movie> nowy=loadData(100);
+    std::vector<movie> nowy=loadData(100);
     std::vector<int> example;
     for (int i=0; i<100;i++) {
         example.push_back(rand()%100);
