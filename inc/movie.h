@@ -30,7 +30,9 @@ class movie {
     std::string	endYear;
     int	runtimeMinutes;
     std::string	genres;
+    bool kategorie[5];//przechowuje inf: czyDokument?, czyArticle?,
    
+    //dodawane pozniej
     double averageRating;
     int	numVotes;
 
@@ -43,7 +45,18 @@ class movie {
      */
     movie(std::string, double);
     movie();
-    
+
+    movie(    std::string tconst,
+    int INTtconst,
+    std::string titleType,
+    std::string primaryTitle,
+    std::string	originalTitle,
+    bool isAdult,
+    int	startYear,
+    std::string	endYear,
+    int	runtimeMinutes,
+    std::string	genres);
+
     // ~movie();
 
     //gettery i settery
@@ -60,8 +73,10 @@ class movie {
      */
     void setSecondSet(double, int);
 
-    std::string print();
-    std::string printBrief();
+    std::string print()const;
+    std::string printBrief()const;
+
+    void setKatArr();
     
 };
 

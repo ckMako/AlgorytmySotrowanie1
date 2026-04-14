@@ -19,6 +19,7 @@
 //swap
 
 class listaFilmow {
+
     std::vector<movie*> ListaFilmow;
 
     public:
@@ -39,10 +40,10 @@ class listaFilmow {
 
     /**
      * @brief dodaje dane z pliku
-     * @param string nazwa pliku z filmami
-     * @param int ile iteracji
+     * @param movie film do dodania do vec
+     * @param int ile kopii
      */
-    void addToList(movie);
+    void addToList(const movie&, int);
 
     /** 
      * @brief sortuje dane na liscie
@@ -55,6 +56,17 @@ class listaFilmow {
      * @param int typ sortowania
      */
     void testSortowania(const int);
+
+    void Print();
+
+    void PrintBrief();
+
+
+    /**
+     * @brief top 3 w danej kat
+     * @param int w jakiej kategorii
+     */
+    void top3Cat(const int);
     
 };
 
