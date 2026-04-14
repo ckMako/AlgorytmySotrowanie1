@@ -1,4 +1,4 @@
-#include "../inc/insert.h"
+#include "algorytmySortowania.h"
 
 void insertionSort(std::vector<int>& arr) {
     int n = arr.size();

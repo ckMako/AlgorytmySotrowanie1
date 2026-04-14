@@ -129,53 +129,53 @@ algoSortowanie/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/build
 .PHONY : algoSortowanie/fast
 
-src/bubbleSort.o: src/bubbleSort.cpp.o
-.PHONY : src/bubbleSort.o
+src/algorytmy/bubbleSort.o: src/algorytmy/bubbleSort.cpp.o
+.PHONY : src/algorytmy/bubbleSort.o
 
 # target to build an object file
-src/bubbleSort.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/bubbleSort.cpp.o
-.PHONY : src/bubbleSort.cpp.o
+src/algorytmy/bubbleSort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/bubbleSort.cpp.o
+.PHONY : src/algorytmy/bubbleSort.cpp.o
 
-src/bubbleSort.i: src/bubbleSort.cpp.i
-.PHONY : src/bubbleSort.i
+src/algorytmy/bubbleSort.i: src/algorytmy/bubbleSort.cpp.i
+.PHONY : src/algorytmy/bubbleSort.i
 
 # target to preprocess a source file
-src/bubbleSort.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/bubbleSort.cpp.i
-.PHONY : src/bubbleSort.cpp.i
+src/algorytmy/bubbleSort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/bubbleSort.cpp.i
+.PHONY : src/algorytmy/bubbleSort.cpp.i
 
-src/bubbleSort.s: src/bubbleSort.cpp.s
-.PHONY : src/bubbleSort.s
+src/algorytmy/bubbleSort.s: src/algorytmy/bubbleSort.cpp.s
+.PHONY : src/algorytmy/bubbleSort.s
 
 # target to generate assembly for a file
-src/bubbleSort.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/bubbleSort.cpp.s
-.PHONY : src/bubbleSort.cpp.s
+src/algorytmy/bubbleSort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/bubbleSort.cpp.s
+.PHONY : src/algorytmy/bubbleSort.cpp.s
 
-src/insert.o: src/insert.cpp.o
-.PHONY : src/insert.o
+src/algorytmy/insert.o: src/algorytmy/insert.cpp.o
+.PHONY : src/algorytmy/insert.o
 
 # target to build an object file
-src/insert.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/insert.cpp.o
-.PHONY : src/insert.cpp.o
+src/algorytmy/insert.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/insert.cpp.o
+.PHONY : src/algorytmy/insert.cpp.o
 
-src/insert.i: src/insert.cpp.i
-.PHONY : src/insert.i
+src/algorytmy/insert.i: src/algorytmy/insert.cpp.i
+.PHONY : src/algorytmy/insert.i
 
 # target to preprocess a source file
-src/insert.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/insert.cpp.i
-.PHONY : src/insert.cpp.i
+src/algorytmy/insert.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/insert.cpp.i
+.PHONY : src/algorytmy/insert.cpp.i
 
-src/insert.s: src/insert.cpp.s
-.PHONY : src/insert.s
+src/algorytmy/insert.s: src/algorytmy/insert.cpp.s
+.PHONY : src/algorytmy/insert.s
 
 # target to generate assembly for a file
-src/insert.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/insert.cpp.s
-.PHONY : src/insert.cpp.s
+src/algorytmy/insert.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/insert.cpp.s
+.PHONY : src/algorytmy/insert.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -258,12 +258,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algoSortowanie"
-	@echo "... src/bubbleSort.o"
-	@echo "... src/bubbleSort.i"
-	@echo "... src/bubbleSort.s"
-	@echo "... src/insert.o"
-	@echo "... src/insert.i"
-	@echo "... src/insert.s"
+	@echo "... src/algorytmy/bubbleSort.o"
+	@echo "... src/algorytmy/bubbleSort.i"
+	@echo "... src/algorytmy/bubbleSort.s"
+	@echo "... src/algorytmy/insert.o"
+	@echo "... src/algorytmy/insert.i"
+	@echo "... src/algorytmy/insert.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

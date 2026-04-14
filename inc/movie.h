@@ -41,6 +41,7 @@ class movie {
      * @param string l porzadkowa
      * @param double rating
      */
+    movie(std::string, double);
     movie();
     
     // ~movie();
@@ -66,8 +67,8 @@ class movie {
 
 //shift+tab--usuwanie wciecia dla kilku linii
 /**
- * @brief overload <
- * @param   movie filmy do porównania
+ * @brief overload < dla Ratingow
+ * @param   movie 2 filmy do porównania
  * @return wynik < dla AverageRaing
  */
 bool operator < (const movie& a, const movie& b);

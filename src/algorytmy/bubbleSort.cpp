@@ -1,4 +1,4 @@
-#include "../inc/bubbleSort.h"
+#include "algorytmySortowania.h"
 
 void bubbleSort(std::vector<int>& arr) {
     int rozmr = arr.size();

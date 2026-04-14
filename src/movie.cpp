@@ -1,10 +1,15 @@
 #include "../inc/movie.h"
 
+movie::movie(std::string arg1, double arg2){
+    tconst = arg1;
+    averageRating=arg2;
+}
+
 movie::movie() {
 
 }
 
-double movie::getAverageRating () {
+double movie::getAverageRating () const{
     return averageRating;
 }
 
