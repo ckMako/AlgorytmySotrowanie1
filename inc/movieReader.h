@@ -1,13 +1,13 @@
 #pragma once
 
 
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <vector>
-#include <iostream>
+// #include <fstream>
+// #include <sstream>
+// #include <string>
+// #include <vector>
+// #include <iostream>
 
-#include<vector>
+// #include<vector>
 
 #include "movie.h"
 
@@ -33,7 +33,7 @@ class listaFilmow {
     listaFilmow(std::string,int);
 
     /**
-     * @brief bedziemy dyn alokowac wiec musi byc
+     * @brief usuwanie Alloc pamieci
      */
     ~listaFilmow();
 
