@@ -1,10 +1,5 @@
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <vector>
-#include <iostream>
-
-#include "movie.h"
+#include "movieReader.h"
+#include "algorytmySortowania.h"
 
 // void nextNonspace (std::string) {
 //     for 

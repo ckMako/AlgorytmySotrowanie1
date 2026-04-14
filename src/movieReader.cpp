@@ -54,6 +54,10 @@ void listaFilmow::PrintBrief() {
     }
 }
 
+void listaFilmow::addFromFile(std::string nazwa, int ile){
+
+}
+
 void listaFilmow::top3Cat(const int){
-    
+
 }

@@ -10,13 +10,13 @@ movie::movie() {
 }
 
 /**
- * iniscjalizuje wartosci bez this
+ * iniscjalizuje wartosci bez this(z claude, moja wersja miała this->pole=pole)
  */
-movie::movie(std::string tconst, int INTtconst, std::string titleType,
+movie::movie(std::string tconst, std::string titleType,
              std::string primaryTitle, std::string originalTitle,
              bool isAdult, int startYear, std::string endYear,
              int runtimeMinutes, std::string genres)
-    : tconst(tconst), INTtconst(INTtconst), titleType(titleType),
+    : tconst(tconst), titleType(titleType),
       primaryTitle(primaryTitle), originalTitle(originalTitle),
       isAdult(isAdult), startYear(startYear), endYear(endYear),
       runtimeMinutes(runtimeMinutes), genres(genres) {}
@@ -37,7 +37,12 @@ std::string movie::print()const{
 }
 
 std::string movie::printBrief()const{
-    return " ";
+    std::string ret="";
+    ret+="tytul: ";
+    ret+=this->primaryTitle;
+    ret+=" ocena: ";
+    ret+=this->averageRating;//tutaj do zmiany
+    return ret;
 }
 
 bool operator < (const movie& a, const movie& b) {

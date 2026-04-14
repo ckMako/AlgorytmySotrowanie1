@@ -1,14 +1,5 @@
 #pragma once
 
-
-// #include <fstream>
-// #include <sstream>
-// #include <string>
-// #include <vector>
-// #include <iostream>
-
-// #include<vector>
-
 #include "movie.h"
 
 //iterowanie vector
@@ -60,6 +51,13 @@ class listaFilmow {
     void Print();
 
     void PrintBrief();
+
+    /**
+     * @brief dodaje z pliku
+     * @param string nazwa pliku(titles)
+     * @param int ile filmow
+     */
+    void addFromFile(std::string, int);
 
 
     /**

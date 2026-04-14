@@ -14,6 +14,8 @@
 
 #define PASS std::cout<<"TO DO"<<std::endl;
 
+//tsv->tab separated values
+//ss rozdzieli tez tytuly
 
 /**
  * @brief klasa ma duzo pol, nalezy posortowac po wskaznikach
@@ -21,13 +23,20 @@
 class movie {
 
     std::string tconst;
+
+    //zmienione tconst na int
     int INTtconst;
+
     std::string titleType; //limited amount of types enum?
     std::string primaryTitle;
     std::string	originalTitle;
     bool isAdult;
     int	startYear;
-    std::string	endYear;
+    std::string	endYear; //string bo moze byc /N
+
+    //endYear jako int jesli mozliwe
+    int endYearINT;
+
     int	runtimeMinutes;
     std::string	genres;
     bool kategorie[5];//przechowuje inf: czyDokument?, czyArticle?,
@@ -46,8 +55,10 @@ class movie {
     movie(std::string, double);
     movie();
 
-    movie(    std::string tconst,
-    int INTtconst,
+    /**
+     * @brief konstruktor bezposredni
+     */
+    movie(std::string tconst,
     std::string titleType,
     std::string primaryTitle,
     std::string	originalTitle,
@@ -77,6 +88,8 @@ class movie {
     std::string printBrief()const;
 
     void setKatArr();
+
+    void setINTtconst();
     
 };
 
