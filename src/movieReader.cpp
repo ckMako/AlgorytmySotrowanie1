@@ -119,4 +119,22 @@ void listaFilmow::top3Cat(const int){
 }
 
 
-void addRatings(std::string costam) {}
+void listaFilmow::addRatings() {
+    std::vector<std::string> tmp = this->ReadrawLines("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.ratings.tsv/data.tsv", ListaFilmow.size(), 0);
+    std::vector<std::string> passArg;
+    
+    double passRating;
+    int passVotes;
+
+    for(std::string j : tmp) {
+        passArg=this->splitLine(j);
+        for (movie* i : ListaFilmow) {
+            if(i->getNum()==passArg[0]) {
+                passRating=std::stod(passArg[1]);
+                passVotes=std::stoi(passArg[2]);
+                i->setSecondSet(passRating, passVotes);
+            }
+        }
+    }
+
+}

@@ -24,6 +24,10 @@ double movie::getAverageRating () const{
     return averageRating;
 }
 
+std::string movie::getNum () const {
+    return info[0];
+}
+
 void movie::setSecondSet(double arg1, int arg2) {
     averageRating=arg1;
     numVotes=arg2;

@@ -90,9 +90,8 @@ class listaFilmow {
 
     /**
      * @brief dodaje ratingi z ratings
-     * @param string nazwa pliku(ratings)
      */
-    void addRatings(std::string);
+    void addRatings();
     
 };
 

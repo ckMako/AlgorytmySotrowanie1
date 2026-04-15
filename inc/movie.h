@@ -63,6 +63,8 @@ class movie {
     //const na koncu dla return
     double getAverageRating () const;
 
+    std::string getNum () const;
+
     //gettery i settery
 
     /**
