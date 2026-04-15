@@ -7,10 +7,12 @@
 
 int main() {
 
-    listaFilmow obj("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.basics.tsv/data.tsv", 30, 0);
+    listaFilmow obj("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.basics.tsv/data.tsv", 100, 0);
     obj.addRatings();
     obj.PrintTop10();
     std::cout<<std::endl;
-    obj.sortowanie(1);
+    obj.sortowanie(2);
     obj.PrintTop10();
+    std::cout<<std::endl;
+    obj.PrintRealTop10();
 }

@@ -1,4 +1,5 @@
 #include "movieReader.h"
+#include "merge.h"
 
 // std::vector <movie> filmy...
 
@@ -42,6 +43,10 @@ void listaFilmow::sortowanie(const int arg){
 
     case 1:
         insertionSort<movie*>(ListaFilmow);
+        break;
+
+    case 2:
+        mergeSort(ListaFilmow);
         break;
     
     default:
@@ -138,6 +143,11 @@ void listaFilmow::addFromFile(std::string nazwa, int ile, int odKtorej){
 
 void listaFilmow::top3Cat(const int){
 
+}
+
+void listaFilmow::PrintRealTop10() {
+    for(int i=0; i<10; i++)
+        std::cout << this->ListaFilmow[ListaFilmow.size()-i-1]->printBrief() << std::endl;
 }
 
 

@@ -56,6 +56,8 @@ class listaFilmow {
 
     void PrintTop10();
 
+    void PrintRealTop10();
+
     /**
      * @brief dzieli string na elementy po tab
      * @param string linia z pliku
