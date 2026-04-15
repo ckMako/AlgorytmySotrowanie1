@@ -46,6 +46,8 @@ std::string movie::printBrief()const{
     std::string ret="";
     ret+="tytul: ";
     ret+=this->info[tytul];
+    ret+="kat: ";
+    ret+=this->info[typTytulu];
     ret+=" ocena: ";
     ret+=std::to_string(this->getAverageRating());//tutaj do zmiany
     return ret;

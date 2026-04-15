@@ -63,6 +63,10 @@ class movie {
     //const na koncu dla return
     double getAverageRating () const;
 
+    std::string getCat () const {
+        return info[1];
+    }
+
     std::string getNum () const;
 
     //gettery i settery
@@ -90,6 +94,6 @@ class movie {
  * @return wynik < dla AverageRaing
  */
 
- 
+
 bool operator<(const movie& a, const movie& b);
 bool operator>(const movie& a, const movie& b);

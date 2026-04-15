@@ -16,4 +16,6 @@ int main() {
     obj.PrintTop10();//10 ostatnich //bez sensu bez usunPuste
     std::cout<<std::endl;
     obj.PrintRealTop10();//10 perwszych
+    std::cout<<std::endl;
+    obj.top3Cat(4, 0);
 }

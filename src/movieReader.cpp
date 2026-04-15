@@ -150,8 +150,29 @@ void listaFilmow::addFromFile(std::string nazwa, int ile, int odKtorej){
     }
 }
 
-void listaFilmow::top3Cat(const int){
+void listaFilmow::top3Cat(const int arg, int typ) {
+    std::string lookfor;
+    switch (typ)
+    {
+    case 0:
+        lookfor="short";
+        break;
 
+    case 1:
+        lookfor="movie";
+        break;
+    
+    default:
+        lookfor="movie";
+        break;
+    }
+    int cntr = 0;
+    for (int i = ListaFilmow.size() - 1; i >= 0 && cntr < arg; i--) {
+        if (ListaFilmow[i]->getCat() == lookfor) {
+            std::cout << ListaFilmow[i]->printBrief() << std::endl;
+            cntr++;
+        }
+    }
 }
 
 void listaFilmow::PrintRealTop10() {

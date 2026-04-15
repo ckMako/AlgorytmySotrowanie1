@@ -90,7 +90,7 @@ class listaFilmow {
      * @brief top 3 w danej kat
      * @param int w jakiej kategorii
      */
-    void top3Cat(const int);
+    void top3Cat(const int, int typ);
 
     /**
      * @brief mysle ze nie trzeba, poniewaz podstawa jest titles, a puste wpisy sa tylko w ratings
