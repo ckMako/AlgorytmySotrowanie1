@@ -7,7 +7,6 @@
 
 int main() {
 
-    movie obj1("pass", 2.0);
-    movie obj2("pass", 5.0);
-    std::cout<<(obj2<obj1)<<std::endl;
+    listaFilmow obj("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.basics.tsv/data.tsv", 10, 0);
+    obj.Print();
 }

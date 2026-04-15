@@ -4,7 +4,7 @@
 #include<fstream>
 #include<string>
 #include<vector>
-#include <sstream> 
+#include<sstream> 
 
     /**
      * @brief Doxygen comm
@@ -12,7 +12,17 @@
      * @return
      */
 
-#define PASS std::cout<<"TO DO"<<std::endl;
+enum infoFilm {
+    tconst,
+    typTytulu,
+    tytul,
+    orygTytul,
+    isAdult, 
+    startYear,
+    endYear,
+    runTime,
+    genres
+};
 
 //tsv->tab separated values
 //ss rozdzieli tez tytuly
@@ -22,28 +32,14 @@
  */
 class movie {
 
-    std::string tconst;
-
-    //zmienione tconst na int
-    int INTtconst;
-
-    std::string titleType; //limited amount of types enum?
-    std::string primaryTitle;
-    std::string	originalTitle;
-    bool isAdult;
-    int	startYear;
-    std::string	endYear; //string bo moze byc /N
-
-    //endYear jako int jesli mozliwe
-    int endYearINT;
-
-    int	runtimeMinutes;
-    std::string	genres;
     bool kategorie[5];//przechowuje inf: czyDokument?, czyArticle?,
+
+    //0-tconst, 1-titleType, 2-primaryTitle, 3-originalTitle, 4-isAdult, 5-startYear, 6-endYear, 7-runtimeMinutes, 8-genres
+    std::string info[9];
    
     //dodawane pozniej
-    double averageRating;
-    int	numVotes;
+    double averageRating=0.0;
+    int	numVotes=0;
 
 
     public:
@@ -58,15 +54,7 @@ class movie {
     /**
      * @brief konstruktor bezposredni
      */
-    movie(std::string tconst,
-    std::string titleType,
-    std::string primaryTitle,
-    std::string	originalTitle,
-    bool isAdult,
-    int	startYear,
-    std::string	endYear,
-    int	runtimeMinutes,
-    std::string	genres);
+    movie(std::string PASS[9]);
 
     // ~movie();
 

@@ -1,5 +1,4 @@
 #include "movieReader.h"
-#include <vector>
 
 // std::vector <movie> filmy...
 
@@ -18,7 +17,9 @@
 
 listaFilmow::listaFilmow(){}
 
-listaFilmow::listaFilmow(std::string,int){}
+listaFilmow::listaFilmow(std::string plik, int ile, int odktorego){
+    this->addFromFile(plik, ile, odktorego);
+}
 
 listaFilmow::~listaFilmow() {
     for (movie* m : ListaFilmow) {
@@ -32,7 +33,7 @@ void listaFilmow::addToList(const movie& arg, int cntr) {
     }
 }
 
-void listaFilmow::sortowanie(const int){}
+void listaFilmow::sortowanie(const int arg){}
 
 void listaFilmow::testSortowania(const int arg){
     //start
@@ -44,7 +45,7 @@ void listaFilmow::testSortowania(const int arg){
 
 void listaFilmow::Print() {
     for (const movie* m : ListaFilmow) {
-        std::cout << m->print() << std::endl;
+        std::cout <<m->getAverageRating()<<" "<< m->print() << std::endl;
     }
 }
 
@@ -54,10 +55,68 @@ void listaFilmow::PrintBrief() {
     }
 }
 
-void listaFilmow::addFromFile(std::string nazwa, int ile){
+std::vector<std::string> listaFilmow::splitLine(const std::string& line) {
+    std::vector<std::string> result;
+    std::stringstream ss(line);
+    std::string item;
 
+    while (std::getline(ss, item, '\t')) {
+        result.push_back(item);
+    }
+
+    return result;
+}
+
+std::vector<std::string> listaFilmow::ReadrawLines (std::string nazwa, int ile, int odKtorej) {
+    std::ifstream file(nazwa); //DATA/title.basics.tsv/data.tsv
+
+    if (!file.is_open()) {
+        throw std::runtime_error("Nie mozna otworzyc pliku");
+    }
+
+    std::vector<std::string> ret;
+    std::string line;
+    int counter=0;
+
+    //pomin header
+    std::getline(file, line);
+
+    //pomin linie
+    for(int i=0; i<odKtorej; i++)
+        std::getline(file, line);
+
+    while (std::getline(file, line) && (counter<ile)) {
+        ret.push_back(line);
+        counter++;
+    } 
+
+    return ret;
+}
+
+
+void listaFilmow::addFromFile(std::string nazwa, int ile, int odKtorej){
+    std::vector<std::string> linje=this->ReadrawLines(nazwa, ile, odKtorej);
+
+    //pass args
+    std::vector<std::string> tmp;
+    std::string passArg[9];
+
+    for (std::string i : linje) {
+        //split tylko aktualnej linii
+        tmp=splitLine(i);
+
+        //kopia tmp do tablicy
+        for (int i = 0; i < 9 && i < tmp.size(); i++) {
+            passArg[i] = tmp[i];
+        }  
+        //newobj
+        this->addToList(movie(passArg), 1);
+    }
 }
 
 void listaFilmow::top3Cat(const int){
 
 }
+
+
+void addRatings(std::string costam) {}

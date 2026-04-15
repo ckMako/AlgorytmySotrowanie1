@@ -21,8 +21,9 @@ class listaFilmow {
      * @brief construc czytajacy juz dane
      * @param string nazwa pliku(titles)
      * @param int ile filmow
+     * @param int od ktorego
      */
-    listaFilmow(std::string,int);
+    listaFilmow(std::string,int, int);
 
     /**
      * @brief usuwanie Alloc pamieci
@@ -53,11 +54,27 @@ class listaFilmow {
     void PrintBrief();
 
     /**
+     * @brief dzieli string na elementy po tab
+     * @param string linia z pliku
+     */
+    std::vector<std::string> splitLine(const std::string& line);
+
+    
+    /**
+     * @brief zwraca nierozdzielone linie z pliku(do znaku /n)
+     * @param string nazwa file
+     * @param ile ile iteracji z pliku
+     * @param odKtorej od ktorej linii
+     */
+    std::vector<std::string> ReadrawLines (std::string nazwa, int ile, int odKtorej);
+
+    /**
      * @brief dodaje z pliku
      * @param string nazwa pliku(titles)
      * @param int ile filmow
+     * @param int od ktorej linii
      */
-    void addFromFile(std::string, int);
+    void addFromFile(std::string, int, int);
 
 
     /**
@@ -65,6 +82,17 @@ class listaFilmow {
      * @param int w jakiej kategorii
      */
     void top3Cat(const int);
+
+    /**
+     * @brief mysle ze nie trzeba, poniewaz podstawa jest titles, a puste wpisy sa tylko w ratings
+     */
+    void usunPuste(){}
+
+    /**
+     * @brief dodaje ratingi z ratings
+     * @param string nazwa pliku(ratings)
+     */
+    void addRatings(std::string);
     
 };
 
