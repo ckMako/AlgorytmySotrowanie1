@@ -101,6 +101,10 @@ class listaFilmow {
      * @brief dodaje ratingi z ratings
      */
     void addRatings();
+
+    int getSize() {
+        return ListaFilmow.size();
+    }
     
 };
 

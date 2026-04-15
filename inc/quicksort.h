@@ -2,6 +2,12 @@
 
 #include "movie.h"
 
+
+/**
+ * @brief partycja, dzieli vector na drzewa
+ * zlozonosc obliczeniowa
+ * profilowanie(profiler)
+ */
 template<class T>
 int partition(std::vector<T>& arr, int left, int right) {
     T pivot = arr[right];
@@ -17,6 +23,14 @@ int partition(std::vector<T>& arr, int left, int right) {
     return i + 1;
 }
 
+/**
+ * @brief  sortowanie
+ * 
+ * @tparam T 
+ * @param arr 
+ * @param left 
+ * @param right 
+ */
 template<class T>
 void quickSort(std::vector<T>& arr, int left, int right) {
     if (left >= right) return;
@@ -25,7 +39,9 @@ void quickSort(std::vector<T>& arr, int left, int right) {
     quickSort(arr, pivotIdx + 1, right);
 }
 
-// wrapper
+/**
+ * @brief wrapper quicksort
+ */
 template<class T>
 void quickSort(std::vector<T>& arr) {
     std::cout << "QuickSort" << std::endl;

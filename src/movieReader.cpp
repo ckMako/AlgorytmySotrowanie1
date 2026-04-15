@@ -182,7 +182,7 @@ void listaFilmow::PrintRealTop10() {
 
 
 void listaFilmow::addRatings() {
-    std::vector<std::string> tmp = this->ReadrawLines("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.ratings.tsv/data.tsv", (ListaFilmow.size()*10), 0);
+    std::vector<std::string> tmp = this->ReadrawLines("C:/Users/macie/OneDrive/Pulpit/AlgoStruct/Algor/Proj/AlgorytmySotrowanie1/DATA/title.ratings.tsv/data.tsv", (ListaFilmow.size()*10), 0);
     std::vector<std::string> passArg;
     
     double passRating;

@@ -36,6 +36,9 @@ class movie {
 
     //0-tconst, 1-titleType, 2-primaryTitle, 3-originalTitle, 4-isAdult, 5-startYear, 6-endYear, 7-runtimeMinutes, 8-genres
     std::string info[9];
+
+    //tconst-wart ID IMBD
+    int tconst;
    
     //dodawane pozniej
     double averageRating=0.0;

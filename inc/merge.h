@@ -30,7 +30,9 @@ void mergeSort(std::vector<T>& arr, int left, int right) {
     merge(arr, left, mid, right);
 }
 
-// wrapper żeby wywołanie było spójne z resztą
+/**
+ * @brief wrapper, do wywolania 
+ */
 template<class T>
 void mergeSort(std::vector<T>& arr) {
     std::cout << "MergeSort" << std::endl;
