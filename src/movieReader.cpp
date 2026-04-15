@@ -33,7 +33,23 @@ void listaFilmow::addToList(const movie& arg, int cntr) {
     }
 }
 
-void listaFilmow::sortowanie(const int arg){}
+void listaFilmow::sortowanie(const int arg){
+    switch (arg)
+    {
+    case 0:
+        bubbleSort<movie*>(ListaFilmow);
+        break;
+
+    case 1:
+        insertionSort<movie*>(ListaFilmow);
+        break;
+    
+    default:
+        bubbleSort<movie*>(ListaFilmow);
+        break;
+    }
+    
+}
 
 void listaFilmow::testSortowania(const int arg){
     //start
@@ -54,6 +70,12 @@ void listaFilmow::PrintBrief() {
         std::cout << m->printBrief() << std::endl;
     }
 }
+
+void listaFilmow::PrintTop10() {
+    for(int i=0; i<10; i++)
+        std::cout << this->ListaFilmow[i]->printBrief() << std::endl;
+}
+
 
 std::vector<std::string> listaFilmow::splitLine(const std::string& line) {
     std::vector<std::string> result;

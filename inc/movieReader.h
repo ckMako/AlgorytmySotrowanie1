@@ -1,6 +1,7 @@
 #pragma once
 
 #include "movie.h"
+#include "algorytmySortowania.h"
 
 //iterowanie vector
 // for (int x : v)        // kopia każdego elementu
@@ -52,6 +53,8 @@ class listaFilmow {
     void Print();
 
     void PrintBrief();
+
+    void PrintTop10();
 
     /**
      * @brief dzieli string na elementy po tab

@@ -51,6 +51,9 @@ std::string movie::printBrief()const{
     return ret;
 }
 
-bool operator < (const movie& a, const movie& b) {
+bool operator<(const movie& a, const movie& b) {
     return a.getAverageRating() < b.getAverageRating();
+}
+bool operator>(const movie& a, const movie& b) {
+    return a.getAverageRating() > b.getAverageRating();
 }

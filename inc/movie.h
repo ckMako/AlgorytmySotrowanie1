@@ -89,5 +89,7 @@ class movie {
  * @param   movie 2 filmy do porównania
  * @return wynik < dla AverageRaing
  */
-bool operator < (const movie& a, const movie& b);
 
+ 
+bool operator<(const movie& a, const movie& b);
+bool operator>(const movie& a, const movie& b);
