@@ -56,11 +56,16 @@ void listaFilmow::sortowanie(const int arg){
     
 }
 
-void listaFilmow::testSortowania(const int arg){
-    //start
+
+void listaFilmow::testSortowania(const int arg) {
+    auto start = std::chrono::high_resolution_clock::now();
+    
     sortowanie(arg);
-    //end
-    std::cout<<"czas"<<std::endl;
+    
+    auto end = std::chrono::high_resolution_clock::now();
+    auto czas = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+    
+    std::cout << "Czas: " << czas.count() << " ms" << std::endl;
 }
 
 

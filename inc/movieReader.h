@@ -1,5 +1,7 @@
 #pragma once
 
+#include <chrono>
+
 #include "movie.h"
 #include "algorytmySortowania.h"
 

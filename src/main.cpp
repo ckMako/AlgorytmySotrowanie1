@@ -11,8 +11,8 @@ int main() {
     obj.addRatings();
     obj.PrintTop10();
     std::cout<<std::endl;
-    obj.sortowanie(2);
-    obj.PrintTop10();
+    obj.testSortowania(2);
+    obj.PrintTop10();//10 ostatnich
     std::cout<<std::endl;
-    obj.PrintRealTop10();
+    obj.PrintRealTop10();//10 perwszych
 }
