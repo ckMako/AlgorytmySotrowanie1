@@ -1,3 +1,5 @@
+#pragma once
+
 #include "movie.h"
 
 template<class T>

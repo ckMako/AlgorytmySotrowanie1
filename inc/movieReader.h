@@ -4,6 +4,8 @@
 
 #include "movie.h"
 #include "algorytmySortowania.h"
+#include "merge.h"
+#include "quicksort.h"
 
 //iterowanie vector
 // for (int x : v)        // kopia każdego elementu
@@ -93,7 +95,7 @@ class listaFilmow {
     /**
      * @brief mysle ze nie trzeba, poniewaz podstawa jest titles, a puste wpisy sa tylko w ratings
      */
-    void usunPuste(){}
+    void usunPuste();
 
     /**
      * @brief dodaje ratingi z ratings

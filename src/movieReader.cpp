@@ -1,5 +1,5 @@
 #include "movieReader.h"
-#include "merge.h"
+
 
 // std::vector <movie> filmy...
 
@@ -47,6 +47,10 @@ void listaFilmow::sortowanie(const int arg){
 
     case 2:
         mergeSort(ListaFilmow);
+        break;
+
+    case 3:
+        quickSort(ListaFilmow);
         break;
     
     default:
@@ -157,7 +161,7 @@ void listaFilmow::PrintRealTop10() {
 
 
 void listaFilmow::addRatings() {
-    std::vector<std::string> tmp = this->ReadrawLines("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.ratings.tsv/data.tsv", ListaFilmow.size(), 0);
+    std::vector<std::string> tmp = this->ReadrawLines("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.ratings.tsv/data.tsv", (ListaFilmow.size()*10), 0);
     std::vector<std::string> passArg;
     
     double passRating;
@@ -174,4 +178,15 @@ void listaFilmow::addRatings() {
         }
     }
 
+}
+
+void listaFilmow::usunPuste() {
+    for (auto it = ListaFilmow.begin(); it != ListaFilmow.end(); ) {
+        if ((*it)->getAverageRating() == 0.0) {
+            delete *it;
+            it = ListaFilmow.erase(it);  // erase zwraca następny iterator
+        } else {
+            ++it;
+        }
+    }
 }
