@@ -18,47 +18,116 @@
 
 listaFilmow::listaFilmow(){}
 
-listaFilmow::listaFilmow(std::string plik, int ile, int odktorego){
-    this->addFromFile(plik, ile, odktorego);
+listaFilmow::listaFilmow(std::string plik, int ile){
+    /*problem resize+aloc pamieci */
+    ListaFilmow.reserve(ile);//na ilosc objektow
+    indeksy.reserve(ile);
+    for(int i =0; i<ile; i++) {
+        // indeksy.back();//do dodawania od indeksu koncowego
+        indeksy.push_back(i);
+    }
+
+    this->addFromFile(plik, ile);
 }
 
-listaFilmow::~listaFilmow() {
-    for (movie* m : ListaFilmow) {
-        delete m;
+void listaFilmow::addToList(const movie& arg) {
+        ListaFilmow.push_back(arg);
+}
+
+void listaFilmow::addFromFile(std::string nazwa, int ile) {
+    //filestream
+    std::ifstream file(nazwa);
+    if (!file.is_open()) {
+        throw std::runtime_error("Nie mozna otworzyc pliku");
+    }
+
+    std::string line;
+
+    // Pomiń header
+    std::getline(file, line);
+
+    //pass args
+    std::string tmp;
+    int tconst;
+    double rating = 0.0;
+    int numVotes = 0;
+
+    int counter = 0;
+    while (std::getline(file, line) && counter < ile) {
+        std::stringstream ss(line);
+
+        std::getline(ss, tmp, '\t');   // tconst
+        // parsowanie
+        long tconst = std::stol(tmp.substr(2));  // "0000001" → 1L
+
+        std::getline(ss, tmp, '\t');      // rating
+        rating = std::stod(tmp);
+        std::getline(ss, tmp, '\t');      // numVotes
+        numVotes = std::stoi(tmp);
+
+        ListaFilmow.push_back(movie(tconst, rating, numVotes));
+
+        counter++;
     }
 }
 
-void listaFilmow::addToList(const movie& arg, int cntr) {
-    for (int i = 0; i < cntr; i++) {
-        ListaFilmow.push_back(new movie(arg));
+void listaFilmow::addTitles(std::string nazwa) {
+    std::ifstream file(nazwa);
+    if (!file.is_open())
+        throw std::runtime_error("Nie mozna otworzyc pliku: " + nazwa);
+
+    std::string line, tmp;
+    int tconst;
+    // pomiń header
+    std::getline(file, line); 
+
+    //counter
+    int counter=this->ListaFilmow.size();
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+
+        std::getline(ss, tmp, '\t');  // tconst
+        tconst = std::stol(tmp.substr(2));
+
+        std::getline(ss, tmp, '\t');  // titleType (pomijamy)
+
+        std::getline(ss, tmp, '\t');  // primaryTitle
+        std::string title = tmp;
+
+        titleTree.insert(tconst, title);
+    }
+
+    // Uzupełnij tytuły w wektorze
+    for (movie& m : ListaFilmow) {
+        m.setTitle(titleTree.find(m.getTconst()));
     }
 }
 
-void listaFilmow::sortowanie(const int arg){
-    switch (arg)
-    {
-    case 0:
-        bubbleSort<movie*>(ListaFilmow);
-        break;
-
-    case 1:
-        insertionSort<movie*>(ListaFilmow);
-        break;
-
-    case 2:
-        mergeSort(ListaFilmow);
-        break;
-
-    case 3:
-        quickSort(ListaFilmow);
-        break;
-    
-    default:
-        bubbleSort<movie*>(ListaFilmow);
-        break;
+void listaFilmow::PrintBrief() {
+    for (const movie m : ListaFilmow) {
+        std::cout << m.printBrief() << std::endl;
     }
-    
 }
+
+void listaFilmow::PrintLast10() {
+    for(int i=0; i<10; i++)
+        std::cout << this->ListaFilmow[i].printBrief() << std::endl;
+}
+
+void listaFilmow::PrintTop10() {
+    for(int i=0; i<10; i++)
+        std::cout << this->ListaFilmow[ListaFilmow.size()-i-1].printBrief() << std::endl;
+}
+
+void listaFilmow::top3Cat(const int arg, int typ) {}
+
+
+
+void listaFilmow::usunPuste() {
+
+}
+
+void listaFilmow::sortowanie(const int arg){}
 
 
 void listaFilmow::testSortowania(const int arg) {
@@ -70,144 +139,4 @@ void listaFilmow::testSortowania(const int arg) {
     auto czas = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
     
     std::cout << "Czas: " << czas.count() << " ms" << std::endl;
-}
-
-
-void listaFilmow::Print() {
-    for (const movie* m : ListaFilmow) {
-        std::cout <<m->getAverageRating()<<" "<< m->print() << std::endl;
-    }
-}
-
-void listaFilmow::PrintBrief() {
-    for (const movie* m : ListaFilmow) {
-        std::cout << m->printBrief() << std::endl;
-    }
-}
-
-void listaFilmow::PrintTop10() {
-    for(int i=0; i<10; i++)
-        std::cout << this->ListaFilmow[i]->printBrief() << std::endl;
-}
-
-
-std::vector<std::string> listaFilmow::splitLine(const std::string& line) {
-    std::vector<std::string> result;
-    std::stringstream ss(line);
-    std::string item;
-
-    while (std::getline(ss, item, '\t')) {
-        result.push_back(item);
-    }
-
-    return result;
-}
-
-std::vector<std::string> listaFilmow::ReadrawLines (std::string nazwa, int ile, int odKtorej) {
-    std::ifstream file(nazwa); //DATA/title.basics.tsv/data.tsv
-
-    if (!file.is_open()) {
-        throw std::runtime_error("Nie mozna otworzyc pliku");
-    }
-
-    std::vector<std::string> ret;
-    std::string line;
-    int counter=0;
-
-    //pomin header
-    std::getline(file, line);
-
-    //pomin linie
-    for(int i=0; i<odKtorej; i++)
-        std::getline(file, line);
-
-    while (std::getline(file, line) && (counter<ile)) {
-        ret.push_back(line);
-        counter++;
-    } 
-
-    return ret;
-}
-
-
-void listaFilmow::addFromFile(std::string nazwa, int ile, int odKtorej){
-    std::vector<std::string> linje=this->ReadrawLines(nazwa, ile, odKtorej);
-
-    //pass args
-    std::vector<std::string> tmp;
-    std::string passArg[9];
-
-    for (std::string i : linje) {
-        //split tylko aktualnej linii
-        tmp=splitLine(i);
-
-        //kopia tmp do tablicy
-        for (int i = 0; i < 9 && i < tmp.size(); i++) {
-            passArg[i] = tmp[i];
-        }  
-        //newobj
-        this->addToList(movie(passArg), 1);
-    }
-}
-
-void listaFilmow::top3Cat(const int arg, int typ) {
-    std::string lookfor;
-    switch (typ)
-    {
-    case 0:
-        lookfor="short";
-        break;
-
-    case 1:
-        lookfor="movie";
-        break;
-    
-    default:
-        lookfor="movie";
-        break;
-    }
-    int cntr = 0;
-    for (int i = ListaFilmow.size() - 1; i >= 0 && cntr < arg; i--) {
-        if (ListaFilmow[i]->getCat() == lookfor) {
-            std::cout << ListaFilmow[i]->printBrief() << std::endl;
-            cntr++;
-        }
-    }
-}
-
-void listaFilmow::PrintRealTop10() {
-    for(int i=0; i<10; i++)
-        std::cout << this->ListaFilmow[ListaFilmow.size()-i-1]->printBrief() << std::endl;
-}
-
-
-void listaFilmow::addRatings() {
-    std::vector<std::string> tmp = this->ReadrawLines("C:/Users/macie/OneDrive/Pulpit/AlgoStruct/Algor/Proj/AlgorytmySotrowanie1/DATA/title.ratings.tsv/data.tsv", (ListaFilmow.size()*10), 0);
-    std::vector<std::string> passArg;
-    
-    double passRating;
-    int passVotes;
-
-    for(std::string j : tmp) {
-        passArg=this->splitLine(j);
-        for (movie* i : ListaFilmow) {
-            if(i->getNum()==passArg[0]) {
-                passRating=std::stod(passArg[1]);
-                passVotes=std::stoi(passArg[2]);
-                i->setSecondSet(passRating, passVotes);
-            }
-        }
-    }
-
-}
-
-void listaFilmow::usunPuste() {
-    for (auto it = ListaFilmow.begin(); it != ListaFilmow.end(); ) {
-        if ((*it)->getAverageRating() == 0.0) {
-            delete *it;
-            it = ListaFilmow.erase(it);  // erase zwraca następny iterator
-        } else {
-            ++it;
-        }
-    }
 }

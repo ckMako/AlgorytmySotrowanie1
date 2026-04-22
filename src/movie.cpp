@@ -1,57 +1,37 @@
 #include "../inc/movie.h"
 
-movie::movie(std::string arg1, double arg2){
-    info[1]= arg1;
+movie::movie(int arg1, double arg2, int arg3){
+    tconst=arg1;
     averageRating=arg2;
+    numVotes=arg3;
 }
 
 movie::movie() {
 
 }
 
-/**
- * iniscjalizuje wartosci bez this(z claude, moja wersja miała this->pole=pole)
- */
-movie::movie(std::string PASS[9]){
-    for (int i = 0; i < 9; i++) {
-        info[i] = PASS[i];
-    }
-}
-
-
 
 double movie::getAverageRating () const{
     return averageRating;
 }
 
-std::string movie::getNum () const {
-    return info[0];
+int movie::getTconst () const {
+    return tconst;
 }
 
-void movie::setSecondSet(double arg1, int arg2) {
-    averageRating=arg1;
-    numVotes=arg2;
-}
-
-std::string movie::print()const{
-    std::string ret="";
-    for(int i=0; i<9; i++) {
-        ret+=info[i];
-        ret+=" ";
-    }
-    return ret;
+void movie::setTitle(std::string Title) {
+    title=Title;
 }
 
 std::string movie::printBrief()const{
-    std::string ret="";
-    ret+="tytul: ";
-    ret+=this->info[tytul];
-    ret+="kat: ";
-    ret+=this->info[typTytulu];
-    ret+=" ocena: ";
-    ret+=std::to_string(this->getAverageRating());//tutaj do zmiany
+    std::string ret=std::to_string(this->averageRating);
+    ret+=" tytul: ";
+    ret+=this->title;
+    ret+=" tconst: ";
+    ret+=std::to_string(this->tconst);
     return ret;
 }
+
 
 bool operator<(const movie& a, const movie& b) {
     return a.getAverageRating() < b.getAverageRating();

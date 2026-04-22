@@ -28,34 +28,33 @@ enum infoFilm {
 //ss rozdzieli tez tytuly
 
 /**
- * @brief klasa ma duzo pol, nalezy posortowac po wskaznikach
+ * @brief klasa ma duzo pol, nalezy posortowac po ptr*
  */
 class movie {
 
-    bool kategorie[5];//przechowuje inf: czyDokument?, czyArticle?,
-
-    //0-tconst, 1-titleType, 2-primaryTitle, 3-originalTitle, 4-isAdult, 5-startYear, 6-endYear, 7-runtimeMinutes, 8-genres
-    std::string info[9];
-
     //tconst-wart ID IMBD
+    // std::string tconst;
     int tconst;
-   
-    //dodawane pozniej
     double averageRating=0.0;
     int	numVotes=0;
 
+    //dodawane pozniej
+    std::string title="noT";
+    int typ; //1-Doc, 2-Article
 
     public:
 
     /**
-     * @param string l porzadkowa
+     * @brief konstruktor domyslnie uzywany
+     * @param int l porzadkowa(tconst)
      * @param double rating
+     * @param int l glosow
      */
-    movie(std::string, double);
+    movie(int, double, int);
     movie();
 
     /**
-     * @brief konstruktor bezposredni
+     * @brief konstruktor bezposredni do wyebanja
      */
     movie(std::string PASS[9]);
 
@@ -66,20 +65,15 @@ class movie {
     //const na koncu dla return
     double getAverageRating () const;
 
-    std::string getCat () const {
-        return info[1];
-    }
-
-    std::string getNum () const;
+    int getTconst () const;
 
     //gettery i settery
 
     /**
-     * @brief do dolaczania danych z pliku ratings
-     * @param double  rating
-     * @param int number of votes
+     * @brief do dolaczania Tytulu
+     * @param string title
      */
-    void setSecondSet(double, int);
+    void setTitle(std::string);
 
     std::string print()const;
     std::string printBrief()const;

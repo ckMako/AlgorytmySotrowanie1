@@ -3,9 +3,10 @@
 #include <chrono>
 
 #include "movie.h"
-#include "algorytmySortowania.h"
-#include "merge.h"
-#include "quicksort.h"
+// #include "algorytmySortowania.h"
+// #include "merge.h"
+// #include "quicksort.h"
+#include "tree.h"
 
 //iterowanie vector
 // for (int x : v)        // kopia każdego elementu
@@ -14,33 +15,50 @@
 
 //swap
 
+
+/**
+ * @brief kontener na filmy
+ * @param vector wektor filmow
+ */
 class listaFilmow {
+    /**
+     * co boedzie szybsze
+     * std::vector<int> sortujemy indeksy
+     * std::vector<movie*> sortujemy wskaznik
+     */
 
-    std::vector<movie*> ListaFilmow;
+    std::vector<movie> ListaFilmow; //objekty
+    std::vector<int> indeksy; //to srtujemy;
+    // std::vector<movie*> ptrMovie //wiszace wskazniki przy relokacji(vector to dyn array)
+    //dangling ptrs
+    /*metoda setPonitersAgain --wolne */
+    //metroda odsortuj-ułóż indeksy od 1 do size jeszcze raz.
 
+    /*std::list - brak reserve */
+
+    avlTree<long> titleTree;
     public:
 
     listaFilmow();
 
     /**
-     * @brief construc czytajacy juz dane
+     * @brief construc czytajacy juz dane, pamiec na filmy nalezy allocowac
+     * 1 raz - na poczatku(alloc wazy duzo, kod wolny) - definiuje ilosc filmow
      * @param string nazwa pliku(titles)
      * @param int ile filmow
-     * @param int od ktorego
      */
-    listaFilmow(std::string,int, int);
+    listaFilmow(std::string,int);
 
     /**
-     * @brief usuwanie Alloc pamieci
+     * @brief niepotrzebne
      */
-    ~listaFilmow();
+    ~listaFilmow(){}
 
     /**
-     * @brief dodaje dane z pliku
+     * @brief pushbackelem
      * @param movie film do dodania do vec
-     * @param int ile kopii
      */
-    void addToList(const movie&, int);
+    void addToList(const movie&);
 
     /** 
      * @brief sortuje dane na liscie
@@ -54,19 +72,17 @@ class listaFilmow {
      */
     void testSortowania(const int);
 
-    void Print();
-
     void PrintBrief();
 
     void PrintTop10();
 
-    void PrintRealTop10();
+    void PrintLast10();
 
     /**
      * @brief dzieli string na elementy po tab
      * @param string linia z pliku
      */
-    std::vector<std::string> splitLine(const std::string& line);
+    // std::vector<std::string> splitLine(const std::string& line);
 
     
     /**
@@ -75,15 +91,14 @@ class listaFilmow {
      * @param ile ile iteracji z pliku
      * @param odKtorej od ktorej linii
      */
-    std::vector<std::string> ReadrawLines (std::string nazwa, int ile, int odKtorej);
+    // std::vector<std::string> ReadrawLines (std::string nazwa, int ile);
 
     /**
      * @brief dodaje z pliku
      * @param string nazwa pliku(titles)
      * @param int ile filmow
-     * @param int od ktorej linii
      */
-    void addFromFile(std::string, int, int);
+    void addFromFile(std::string, int);
 
 
     /**
@@ -95,16 +110,20 @@ class listaFilmow {
     /**
      * @brief mysle ze nie trzeba, poniewaz podstawa jest titles, a puste wpisy sa tylko w ratings
      */
-    void usunPuste();
+    void usunPuste(){}
 
-    /**
-     * @brief dodaje ratingi z ratings
-     */
-    void addRatings();
+    void addTitles();
 
     int getSize() {
         return ListaFilmow.size();
     }
+
+    /**
+     * @brief wyswietl mediane danych
+     */
+    void Mediana();
+
+    void addTitles(std::string nazwa);
     
 };
 
