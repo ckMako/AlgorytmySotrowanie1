@@ -83,7 +83,7 @@ void listaFilmow::addTitles(std::string nazwa) {
 
     //counter
     int counter=this->ListaFilmow.size();
-    while (std::getline(file, line)) {
+    while (std::getline(file, line) && counter > 1) {
         std::stringstream ss(line);
 
         std::getline(ss, tmp, '\t');  // tconst
@@ -95,6 +95,7 @@ void listaFilmow::addTitles(std::string nazwa) {
         std::string title = tmp;
 
         titleTree.insert(tconst, title);
+        counter--;
     }
 
     // Uzupełnij tytuły w wektorze
@@ -110,13 +111,13 @@ void listaFilmow::PrintBrief() {
 }
 
 void listaFilmow::PrintLast10() {
-    for(int i=0; i<10; i++)
-        std::cout << this->ListaFilmow[i].printBrief() << std::endl;
+    for (int i = 0; i < 10; i++)
+        std::cout << ListaFilmow[indeksy[i]].printBrief() << std::endl;
 }
 
 void listaFilmow::PrintTop10() {
-    for(int i=0; i<10; i++)
-        std::cout << this->ListaFilmow[ListaFilmow.size()-i-1].printBrief() << std::endl;
+    for (int i = 0; i < 10; i++)
+        std::cout << ListaFilmow[indeksy[indeksy.size()-i-1]].printBrief() << std::endl;
 }
 
 void listaFilmow::top3Cat(const int arg, int typ) {}
@@ -127,7 +128,25 @@ void listaFilmow::usunPuste() {
 
 }
 
-void listaFilmow::sortowanie(const int arg){}
+void listaFilmow::sortowanie(const int arg){
+    switch (arg)
+    {
+    case 1:
+        std::cout<<"Merge sort"<<std::endl;
+        mergeSort(this->ListaFilmow, this->indeksy, 0, this->indeksy.size() - 1);
+        break;
+    
+    case 2:
+        std::cout<<"quick sort"<<std::endl;
+        quickSort(ListaFilmow, indeksy);
+        break;
+    
+    default:
+        std::cout<<"Merge sort"<<std::endl;
+        mergeSort(this->ListaFilmow, this->indeksy, 0, this->indeksy.size() - 1);
+        break;
+    }
+}
 
 
 void listaFilmow::testSortowania(const int arg) {
@@ -138,5 +157,5 @@ void listaFilmow::testSortowania(const int arg) {
     auto end = std::chrono::high_resolution_clock::now();
     auto czas = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
     
-    std::cout << "Czas: " << czas.count() << " ms" << std::endl;
+    std::cout << "Czas sortowania: " << czas.count() << " ms" << std::endl;
 }

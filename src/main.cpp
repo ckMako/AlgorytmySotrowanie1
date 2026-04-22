@@ -1,6 +1,8 @@
 #include "movieReader.h"
 // #include "algorytmySortowania.h"
 
+#include <cmath>
+
 #define PRINTL(arg) std::cout<<arg<<std::endl
 
 // void nextNonspace (std::string) {
@@ -8,21 +10,29 @@
 // }
 
 int main(int argc, const char *argv[]) {
-    int ilosc;
+    long ilosc;
     std::cout<<"ile rek?"<<std::endl;
     std::cin>>ilosc;
-    ilosc=10^ilosc;
+
+
+    ilosc= std::pow(10, ilosc);  // 7-wszyskie
+    std::cout<<"l rekordow: "<<ilosc<<std::endl;
 
     auto start = std::chrono::high_resolution_clock::now();
     listaFilmow obj("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.ratings.tsv/data.tsv",
-        1300000);
+        ilosc);
     obj.addTitles("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.basics.tsv/data.tsv");
-    obj.PrintBrief();
+    std::cout<<obj.getSize()<<std::endl;
 
     
     auto end = std::chrono::high_resolution_clock::now();
     auto czas = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-    std::cout<<czas.count()<<std::endl;
+    std::cout<<"czas zapisu: "<<czas.count()<<"ms"<<std::endl;
+    obj.testSortowania(1);
+    std::cout<<"Top 10: "<<std::endl;
+    obj.PrintTop10();
+    std::cout<<std::endl<<"Last 10: "<<std::endl;
+    obj.PrintLast10();
 
 }
 

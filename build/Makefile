@@ -177,6 +177,54 @@ src/algorytmy/insert.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/insert.cpp.s
 .PHONY : src/algorytmy/insert.cpp.s
 
+src/algorytmy/merge.o: src/algorytmy/merge.cpp.o
+.PHONY : src/algorytmy/merge.o
+
+# target to build an object file
+src/algorytmy/merge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/merge.cpp.o
+.PHONY : src/algorytmy/merge.cpp.o
+
+src/algorytmy/merge.i: src/algorytmy/merge.cpp.i
+.PHONY : src/algorytmy/merge.i
+
+# target to preprocess a source file
+src/algorytmy/merge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/merge.cpp.i
+.PHONY : src/algorytmy/merge.cpp.i
+
+src/algorytmy/merge.s: src/algorytmy/merge.cpp.s
+.PHONY : src/algorytmy/merge.s
+
+# target to generate assembly for a file
+src/algorytmy/merge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/merge.cpp.s
+.PHONY : src/algorytmy/merge.cpp.s
+
+src/algorytmy/quicksort.o: src/algorytmy/quicksort.cpp.o
+.PHONY : src/algorytmy/quicksort.o
+
+# target to build an object file
+src/algorytmy/quicksort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/quicksort.cpp.o
+.PHONY : src/algorytmy/quicksort.cpp.o
+
+src/algorytmy/quicksort.i: src/algorytmy/quicksort.cpp.i
+.PHONY : src/algorytmy/quicksort.i
+
+# target to preprocess a source file
+src/algorytmy/quicksort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/quicksort.cpp.i
+.PHONY : src/algorytmy/quicksort.cpp.i
+
+src/algorytmy/quicksort.s: src/algorytmy/quicksort.cpp.s
+.PHONY : src/algorytmy/quicksort.s
+
+# target to generate assembly for a file
+src/algorytmy/quicksort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/quicksort.cpp.s
+.PHONY : src/algorytmy/quicksort.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -264,6 +312,12 @@ help:
 	@echo "... src/algorytmy/insert.o"
 	@echo "... src/algorytmy/insert.i"
 	@echo "... src/algorytmy/insert.s"
+	@echo "... src/algorytmy/merge.o"
+	@echo "... src/algorytmy/merge.i"
+	@echo "... src/algorytmy/merge.s"
+	@echo "... src/algorytmy/quicksort.o"
+	@echo "... src/algorytmy/quicksort.i"
+	@echo "... src/algorytmy/quicksort.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -4,8 +4,8 @@
 
 #include "movie.h"
 // #include "algorytmySortowania.h"
-// #include "merge.h"
-// #include "quicksort.h"
+#include "merge.h"
+#include "quicksort.h"
 #include "tree.h"
 
 //iterowanie vector
@@ -108,9 +108,9 @@ class listaFilmow {
     void top3Cat(const int, int typ);
 
     /**
-     * @brief mysle ze nie trzeba, poniewaz podstawa jest titles, a puste wpisy sa tylko w ratings
+     * @brief mysle ze nie trzeba, usuwanie ratingow bez tytulow nie ma sensu bo mozemy nie znalezc wszystkich tyt
      */
-    void usunPuste(){}
+    void usunPuste();
 
     void addTitles();
 

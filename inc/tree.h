@@ -3,7 +3,7 @@
 
 /**
  * @brief wezel drzewa avl
- * @tparam typ
+ * @tparam typ danych
  */
 template<class T>
 struct Node {
@@ -54,6 +54,7 @@ class avlTree {
      * @brief obroc drzewo
      * @param x kopia lew
      * @param y kopia praw
+     * @return nowe poddrzewo dobrze ustawione
      */
     Node<T>* rotateRight(Node<T>* y) {
         Node<T>* x = y->left;
@@ -65,6 +66,9 @@ class avlTree {
         return x;
     }
 
+    /**
+     * @brief analog rotRight
+     */
     Node<T>* rotateLeft(Node<T>* x) {
         Node<T>* y = x->right;
         Node<T>* B = y->left;
@@ -75,6 +79,9 @@ class avlTree {
         return y;
     }
 
+    /**
+     * @brief wstaw galaz
+     */
     Node<T>* insert(Node<T>* node, T key, const std::string& title) {
         if (!node) return new Node<T>(key, title);
         if      (key < node->key) node->left  = insert(node->left,  key, title);
@@ -83,6 +90,7 @@ class avlTree {
 
         updateHeight(node);
 
+        //dopuszczamy balans 0-1, dla wiecej obracamy, mozna zal 0-2, 0-3
         int b = balance(node);
 
         if (b > 1  && key < node->left->key)
@@ -104,14 +112,24 @@ class avlTree {
         return node;
     }
 
+    /**
+     * @brief znajdz title
+     */
     std::string find(Node<T>* node, T key) {
-        if (!node) return "";
-        if      (key < node->key) return find(node->left,  key);
-        else if (key > node->key) return find(node->right, key);
-        else return node->title;
+        if (!node) 
+            return "none";
+        if      (key < node->key) 
+            return find(node->left,  key);
+        else if (key > node->key) 
+            return find(node->right, key);
+        else 
+            return node->title;
     }
 
 public:
+    /**
+     * @brief wstaw korzen poddrzewa
+     */
     void insert(T key, const std::string& title) {
         root = insert(root, key, title);
     }
