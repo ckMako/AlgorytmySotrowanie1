@@ -1,21 +1,7 @@
 #pragma once
 #include <string>
 
-/**
- * @brief wezel drzewa avl
- * @tparam typ danych
- */
-template<class T>
-struct Node {
-    T key;
-    std::string title;
-    Node* left;
-    Node* right;
-    int height;
-
-    Node(T k, const std::string& t)
-        : key(k), title(t), left(nullptr), right(nullptr), height(1) {}
-};
+#include "node.h"
 
 
 /**

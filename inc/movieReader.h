@@ -6,7 +6,7 @@
 // #include "algorytmySortowania.h"
 #include "merge.h"
 #include "quicksort.h"
-#include "tree.h"
+#include "avl.h"
 
 //iterowanie vector
 // for (int x : v)        // kopia każdego elementu
