@@ -1,4 +1,4 @@
-#include "merge.h"
+#include "SORT/merge.h"
 
 void merge(std::vector<movie>& movies, std::vector<int>& indx, 
            int left, int mid, int right) {

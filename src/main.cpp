@@ -1,9 +1,8 @@
 #include "movieReader.h"
-// #include "algorytmySortowania.h"
 
 #include <cmath>
 
-#define PRINTL(arg) std::cout<<arg<<std::endl
+#define PRINTL(arg) std::cout<<arg<<std::endl //printLine
 
 // void nextNonspace (std::string) {
 //     for 
@@ -22,7 +21,7 @@ int main(int argc, const char *argv[]) {
     listaFilmow obj("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.ratings.tsv/data.tsv",
         ilosc);
     obj.addTitles("/home/vboxuser/Desktop/Alg_Struct/algorSort/DATA/title.basics.tsv/data.tsv");
-    std::cout<<obj.getSize()<<std::endl;
+    std::cout<<"liczba filmow w struct "<<obj.getSize()<<std::endl;
 
     
     auto end = std::chrono::high_resolution_clock::now();
@@ -33,6 +32,10 @@ int main(int argc, const char *argv[]) {
     obj.PrintTop10();
     std::cout<<std::endl<<"Last 10: "<<std::endl;
     obj.PrintLast10();
+
+    obj.usunPuste();
+
+    obj.PrintBrief();
 
 }
 

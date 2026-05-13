@@ -117,120 +117,120 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named algoSortowanie
+# Target rules for targets named algorSortowanie
 
 # Build rule for target.
-algoSortowanie: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algoSortowanie
-.PHONY : algoSortowanie
+algorSortowanie: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorSortowanie
+.PHONY : algorSortowanie
 
 # fast build rule for target.
-algoSortowanie/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/build
-.PHONY : algoSortowanie/fast
+algorSortowanie/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/build
+.PHONY : algorSortowanie/fast
 
-src/algorytmy/bubbleSort.o: src/algorytmy/bubbleSort.cpp.o
-.PHONY : src/algorytmy/bubbleSort.o
-
-# target to build an object file
-src/algorytmy/bubbleSort.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/bubbleSort.cpp.o
-.PHONY : src/algorytmy/bubbleSort.cpp.o
-
-src/algorytmy/bubbleSort.i: src/algorytmy/bubbleSort.cpp.i
-.PHONY : src/algorytmy/bubbleSort.i
-
-# target to preprocess a source file
-src/algorytmy/bubbleSort.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/bubbleSort.cpp.i
-.PHONY : src/algorytmy/bubbleSort.cpp.i
-
-src/algorytmy/bubbleSort.s: src/algorytmy/bubbleSort.cpp.s
-.PHONY : src/algorytmy/bubbleSort.s
-
-# target to generate assembly for a file
-src/algorytmy/bubbleSort.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/bubbleSort.cpp.s
-.PHONY : src/algorytmy/bubbleSort.cpp.s
-
-src/algorytmy/insert.o: src/algorytmy/insert.cpp.o
-.PHONY : src/algorytmy/insert.o
+src/SORT/bubbleSort.o: src/SORT/bubbleSort.cpp.o
+.PHONY : src/SORT/bubbleSort.o
 
 # target to build an object file
-src/algorytmy/insert.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/insert.cpp.o
-.PHONY : src/algorytmy/insert.cpp.o
+src/SORT/bubbleSort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/bubbleSort.cpp.o
+.PHONY : src/SORT/bubbleSort.cpp.o
 
-src/algorytmy/insert.i: src/algorytmy/insert.cpp.i
-.PHONY : src/algorytmy/insert.i
+src/SORT/bubbleSort.i: src/SORT/bubbleSort.cpp.i
+.PHONY : src/SORT/bubbleSort.i
 
 # target to preprocess a source file
-src/algorytmy/insert.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/insert.cpp.i
-.PHONY : src/algorytmy/insert.cpp.i
+src/SORT/bubbleSort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/bubbleSort.cpp.i
+.PHONY : src/SORT/bubbleSort.cpp.i
 
-src/algorytmy/insert.s: src/algorytmy/insert.cpp.s
-.PHONY : src/algorytmy/insert.s
+src/SORT/bubbleSort.s: src/SORT/bubbleSort.cpp.s
+.PHONY : src/SORT/bubbleSort.s
 
 # target to generate assembly for a file
-src/algorytmy/insert.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/insert.cpp.s
-.PHONY : src/algorytmy/insert.cpp.s
+src/SORT/bubbleSort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/bubbleSort.cpp.s
+.PHONY : src/SORT/bubbleSort.cpp.s
 
-src/algorytmy/merge.o: src/algorytmy/merge.cpp.o
-.PHONY : src/algorytmy/merge.o
+src/SORT/insert.o: src/SORT/insert.cpp.o
+.PHONY : src/SORT/insert.o
 
 # target to build an object file
-src/algorytmy/merge.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/merge.cpp.o
-.PHONY : src/algorytmy/merge.cpp.o
+src/SORT/insert.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/insert.cpp.o
+.PHONY : src/SORT/insert.cpp.o
 
-src/algorytmy/merge.i: src/algorytmy/merge.cpp.i
-.PHONY : src/algorytmy/merge.i
+src/SORT/insert.i: src/SORT/insert.cpp.i
+.PHONY : src/SORT/insert.i
 
 # target to preprocess a source file
-src/algorytmy/merge.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/merge.cpp.i
-.PHONY : src/algorytmy/merge.cpp.i
+src/SORT/insert.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/insert.cpp.i
+.PHONY : src/SORT/insert.cpp.i
 
-src/algorytmy/merge.s: src/algorytmy/merge.cpp.s
-.PHONY : src/algorytmy/merge.s
+src/SORT/insert.s: src/SORT/insert.cpp.s
+.PHONY : src/SORT/insert.s
 
 # target to generate assembly for a file
-src/algorytmy/merge.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/merge.cpp.s
-.PHONY : src/algorytmy/merge.cpp.s
+src/SORT/insert.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/insert.cpp.s
+.PHONY : src/SORT/insert.cpp.s
 
-src/algorytmy/quicksort.o: src/algorytmy/quicksort.cpp.o
-.PHONY : src/algorytmy/quicksort.o
+src/SORT/merge.o: src/SORT/merge.cpp.o
+.PHONY : src/SORT/merge.o
 
 # target to build an object file
-src/algorytmy/quicksort.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/quicksort.cpp.o
-.PHONY : src/algorytmy/quicksort.cpp.o
+src/SORT/merge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/merge.cpp.o
+.PHONY : src/SORT/merge.cpp.o
 
-src/algorytmy/quicksort.i: src/algorytmy/quicksort.cpp.i
-.PHONY : src/algorytmy/quicksort.i
+src/SORT/merge.i: src/SORT/merge.cpp.i
+.PHONY : src/SORT/merge.i
 
 # target to preprocess a source file
-src/algorytmy/quicksort.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/quicksort.cpp.i
-.PHONY : src/algorytmy/quicksort.cpp.i
+src/SORT/merge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/merge.cpp.i
+.PHONY : src/SORT/merge.cpp.i
 
-src/algorytmy/quicksort.s: src/algorytmy/quicksort.cpp.s
-.PHONY : src/algorytmy/quicksort.s
+src/SORT/merge.s: src/SORT/merge.cpp.s
+.PHONY : src/SORT/merge.s
 
 # target to generate assembly for a file
-src/algorytmy/quicksort.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/algorytmy/quicksort.cpp.s
-.PHONY : src/algorytmy/quicksort.cpp.s
+src/SORT/merge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/merge.cpp.s
+.PHONY : src/SORT/merge.cpp.s
+
+src/SORT/quicksort.o: src/SORT/quicksort.cpp.o
+.PHONY : src/SORT/quicksort.o
+
+# target to build an object file
+src/SORT/quicksort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/quicksort.cpp.o
+.PHONY : src/SORT/quicksort.cpp.o
+
+src/SORT/quicksort.i: src/SORT/quicksort.cpp.i
+.PHONY : src/SORT/quicksort.i
+
+# target to preprocess a source file
+src/SORT/quicksort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/quicksort.cpp.i
+.PHONY : src/SORT/quicksort.cpp.i
+
+src/SORT/quicksort.s: src/SORT/quicksort.cpp.s
+.PHONY : src/SORT/quicksort.s
+
+# target to generate assembly for a file
+src/SORT/quicksort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/SORT/quicksort.cpp.s
+.PHONY : src/SORT/quicksort.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -238,7 +238,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -246,7 +246,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/movie.o: src/movie.cpp.o
@@ -254,7 +254,7 @@ src/movie.o: src/movie.cpp.o
 
 # target to build an object file
 src/movie.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movie.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/movie.cpp.o
 .PHONY : src/movie.cpp.o
 
 src/movie.i: src/movie.cpp.i
@@ -262,7 +262,7 @@ src/movie.i: src/movie.cpp.i
 
 # target to preprocess a source file
 src/movie.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movie.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/movie.cpp.i
 .PHONY : src/movie.cpp.i
 
 src/movie.s: src/movie.cpp.s
@@ -270,7 +270,7 @@ src/movie.s: src/movie.cpp.s
 
 # target to generate assembly for a file
 src/movie.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movie.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/movie.cpp.s
 .PHONY : src/movie.cpp.s
 
 src/movieReader.o: src/movieReader.cpp.o
@@ -278,7 +278,7 @@ src/movieReader.o: src/movieReader.cpp.o
 
 # target to build an object file
 src/movieReader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movieReader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/movieReader.cpp.o
 .PHONY : src/movieReader.cpp.o
 
 src/movieReader.i: src/movieReader.cpp.i
@@ -286,7 +286,7 @@ src/movieReader.i: src/movieReader.cpp.i
 
 # target to preprocess a source file
 src/movieReader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movieReader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/movieReader.cpp.i
 .PHONY : src/movieReader.cpp.i
 
 src/movieReader.s: src/movieReader.cpp.s
@@ -294,7 +294,7 @@ src/movieReader.s: src/movieReader.cpp.s
 
 # target to generate assembly for a file
 src/movieReader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algoSortowanie.dir/build.make CMakeFiles/algoSortowanie.dir/src/movieReader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorSortowanie.dir/build.make CMakeFiles/algorSortowanie.dir/src/movieReader.cpp.s
 .PHONY : src/movieReader.cpp.s
 
 # Help Target
@@ -305,19 +305,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... algoSortowanie"
-	@echo "... src/algorytmy/bubbleSort.o"
-	@echo "... src/algorytmy/bubbleSort.i"
-	@echo "... src/algorytmy/bubbleSort.s"
-	@echo "... src/algorytmy/insert.o"
-	@echo "... src/algorytmy/insert.i"
-	@echo "... src/algorytmy/insert.s"
-	@echo "... src/algorytmy/merge.o"
-	@echo "... src/algorytmy/merge.i"
-	@echo "... src/algorytmy/merge.s"
-	@echo "... src/algorytmy/quicksort.o"
-	@echo "... src/algorytmy/quicksort.i"
-	@echo "... src/algorytmy/quicksort.s"
+	@echo "... algorSortowanie"
+	@echo "... src/SORT/bubbleSort.o"
+	@echo "... src/SORT/bubbleSort.i"
+	@echo "... src/SORT/bubbleSort.s"
+	@echo "... src/SORT/insert.o"
+	@echo "... src/SORT/insert.i"
+	@echo "... src/SORT/insert.s"
+	@echo "... src/SORT/merge.o"
+	@echo "... src/SORT/merge.i"
+	@echo "... src/SORT/merge.s"
+	@echo "... src/SORT/quicksort.o"
+	@echo "... src/SORT/quicksort.i"
+	@echo "... src/SORT/quicksort.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

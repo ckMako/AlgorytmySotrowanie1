@@ -1,4 +1,4 @@
-#include "algorytmySortowania.h"
+#include "SORT/algorytmySortowania.h"
 
 // template<class T>
 // void bubbleSort(std::vector<T>& arr) {

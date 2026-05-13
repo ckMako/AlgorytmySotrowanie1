@@ -1,4 +1,4 @@
-#include "../inc/movie.h"
+#include "movie.h"
 
 movie::movie(int arg1, double arg2, int arg3){
     tconst=arg1;
@@ -17,6 +17,10 @@ double movie::getAverageRating () const{
 
 int movie::getTconst () const {
     return tconst;
+}
+
+std::string movie::getTitle () const {
+    return title;
 }
 
 void movie::setTitle(std::string Title) {
